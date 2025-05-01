@@ -6,7 +6,7 @@ RUN mvn clean package -DskipTests
 
 # 使用 JRE 作為運行階段
 FROM eclipse-temurin:21-jre
-WORKDIR /app
+WORKDIR /app哈哈
 COPY --from=build /app/target/Cloud-Native-HW4-1.0-SNAPSHOT.jar app.jar
 
 # 指定啟動命令
