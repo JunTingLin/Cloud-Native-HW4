@@ -1,6 +1,8 @@
 # Cloud-Native-HW4
 This is assignment 4 for Cloud-Native
 
+Docker Hub Repo: https://hub.docker.com/r/juntinglin/2025cloud/tags
+
 ---
 
 ## Docker 指令打包
@@ -49,7 +51,9 @@ docker run --rm juntinglin/2025cloud:v1.0.0
   1. GitHub 讀取 [`.github/workflows/release.yml`](.github/workflows/release.yml)
   2. 透過 `actions/checkout@v4` 把程式碼拉下來
   3. 使用 `docker/login-action@v2` 登入 Docker Hub（帳號寫死 `juntinglin`、密碼由 `${{ secrets.DOCKERHUB_TOKEN }}` 提供）
-  4. 透過 `docker/build-push-action@v4` 做 build 並 push
+     ![image](https://github.com/user-attachments/assets/65a3c53f-78f4-4934-96dc-667d3fac6bf0)
+
+  5. 透過 `docker/build-push-action@v4` 做 build 並 push
      + `context: .`,`file: Dockerfile`
      + tags: `juntinglin/2025cloud:${{ github.ref_name }}`
 + Tag 選擇邏輯
@@ -58,6 +62,10 @@ docker run --rm juntinglin/2025cloud:v1.0.0
 + 結果
     + 成功後，可在 [Docker Hub 2025cloud Tags](https://hub.docker.com/r/juntinglin/2025cloud/tags) 頁面 看到對應的 image tag
     + 在 Actions Log 裡也能看到 `juntinglin/2025cloud:v1.0.0` 以及 push 的詳細輸出。
+    + ![image](https://github.com/user-attachments/assets/e7866b0f-5869-4534-b585-d7f4114adce0)
+    + ![image](https://github.com/user-attachments/assets/35d55ccf-0dfe-4920-83cb-31ef71a99553)
+
+
 
 #### 簡易流程示意
 ```
